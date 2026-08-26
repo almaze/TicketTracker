@@ -1,48 +1,40 @@
-# Ticket Tracker
+# TicketTracker
 
-A small full-stack Ticket Tracker application built with a C# ASP.NET Core backend and a Next.js frontend.
+A full-stack ticket management application built with ASP.NET Core Web API, Entity Framework Core, PostgreSQL, and Next.js.
 
-## Project Structure
+## Tech Stack
 
-- `TicketTracker.Api/` - ASP.NET Core backend
-- `frontend/` - Next.js frontend
-- `TicketTracker.sln` - .NET solution
+* **Backend:** ASP.NET Core Web API (.NET 10)
+* **Database:** PostgreSQL
+* **ORM:** Entity Framework Core
+* **Authentication:** JWT
+* **Frontend:** Next.js, React, TypeScript
+* **Testing:** xUnit, Vitest, React Testing Library
 
-## Prerequisites
+## How to Run
 
-- .NET SDK
-- Node.js LTS
-- npm
-
-## Running the Backend
+### 1. Backend
 
 From the project root:
 
-```bash
+```powershell
 cd TicketTracker.Api
 dotnet run
 ```
 
-The backend provides:
+The API runs at:
 
 ```text
-GET /health
+http://localhost:5087
 ```
 
-A successful request returns:
+### 2. Frontend
 
-```text
-Healthy
-```
+Open a second terminal:
 
-with HTTP status `200 OK`.
-
-## Running the Frontend
-
-From the project root:
-
-```bash
+```powershell
 cd frontend
+npm install
 npm run dev
 ```
 
@@ -52,14 +44,42 @@ Open:
 http://localhost:3000
 ```
 
-## Tests
+The backend should be running before using features that communicate with the API.
 
-Automated tests will be added in a later milestone.
+## Testing
 
-## Milestone 0 Status
+### Backend tests
 
-- [x] ASP.NET Core backend runs
-- [x] `GET /health` returns `200 OK`
-- [x] Next.js frontend runs
-- [x] README created
-- [ ] Automated tests
+From the project root:
+
+```powershell
+dotnet test
+```
+
+The backend test verifies that a user cannot retrieve another user's ticket.
+
+### Frontend tests
+
+From the `frontend` directory:
+
+```powershell
+npm test
+```
+
+The frontend test verifies registration form validation when required fields are empty.
+
+## Completed Milestones
+
+* **Milestone 1:** Backend foundation and database setup
+* **Milestone 2:** Authentication and ticket API
+* **Milestone 3:** Frontend authentication and protected routes
+* **Milestone 4:** Frontend ticket experience
+* **Milestone 5:** Backend and frontend tests, README documentation, and polish
+
+## Future Improvements
+
+With more time, I would improve the UI with more polished ticket cards, filtering, sorting, and pagination. I would also add more comprehensive backend and frontend test coverage, including authentication and ticket creation/update scenarios. Additional improvements could include centralized API configuration, better production error handling, and deployment using Docker.
+
+## Authentication
+
+Users can register and log in through the frontend. Successful login stores a JWT, which is sent with authenticated API requests. Protected ticket routes require authentication, and logging out clears the stored session.
