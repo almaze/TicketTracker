@@ -24,3 +24,55 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.tickets-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.ticket-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 24px 0 40px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-field input,
+.form-field textarea,
+.form-field select {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.form-field textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.ticket-card {
+  padding: 20px;
+  margin-bottom: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.ticket-card h2 {
+  margin-top: 0;
+}
+
+.create-error {
+  color: #c00;
+}
+
+.logout-button {
+  margin-top: 24px;
+}
