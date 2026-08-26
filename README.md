@@ -78,7 +78,10 @@ The frontend test verifies registration form validation when required fields are
 
 ## Future Improvements
 
-With more time, I would improve the UI with more polished ticket cards, filtering, sorting, and pagination. I would also add more comprehensive backend and frontend test coverage, including authentication and ticket creation/update scenarios. Additional improvements could include centralized API configuration, better production error handling, and deployment using Docker.
+## Future Improvements and Trade-offs
+
+With more time, I would improve the UI styling and add features such as ticket filtering and sorting. I would also add more automated tests for ticket creation and status updates. I chose to keep the implementation simple and focused on the required milestones so that the main end-to-end functionality could be completed and tested reliably.
+
 
 ## Authentication
 
